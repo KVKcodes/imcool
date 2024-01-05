@@ -17,7 +17,7 @@ body {
   background-color: #f6eee3;
   background-size: 20px 20px;
   background-image:  repeating-linear-gradient(0deg, #e5decf, #e5decf 1px, #f6eee3 1px, #f6eee3);
-  padding: 1rem;
+  padding: 10px;
   color: var(--text-color);
 }
 
