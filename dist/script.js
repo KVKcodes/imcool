@@ -1,9 +1,14 @@
+//my code
+var instruct = document.getElementById('link');
+
+//normal code
 var winWidth = $(window).width();
 var ratio = winWidth / 1920;
 var fontSize = {
   small: 12,
   medium: 14
 };
+var opened= false;
 var played = [0, 0, 0];
 var vara = [];
 var bodyFontSize = Math.max(16 * ratio, 10);
@@ -127,12 +132,55 @@ vara[2] = new Vara(
     autoAnimation: false
   }
 );
-vara[2].ready(function() {
+vara[3] = new Vara(
+  "#vara-container4",
+  "https://rawcdn.githack.com/akzhy/Vara/ed6ab92fdf196596266ae76867c415fa659eb348/fonts/Satisfy/SatisfySL.json",
+  [
+    {
+      text: "18 Jan 2019",
+      textAlign: "right",
+      delay: 500,
+      y: 20,
+      x: -30,
+      duration: 1500,
+      fontSize: fontSize.small
+    },
+    {
+      text: "Damn boy.",
+      y: 40,
+      x: posX,
+      duration: 4000
+    },
+    {
+      text: "Nouicee,",
+      y: 20,
+      x: posX,
+      duration: 3500
+    },
+    {
+      text: "Github.",
+      y: 10,
+      color: "#3f51b5",
+      id: "link",
+      x: posX,
+      duration: 1500
+    }
+  ],
+  {
+    strokeWidth: 2,
+    fontSize: fontSize.medium,
+    autoAnimation: false
+  }
+);
+vara[3].ready(function() {
   $(".front:not(.last)").click(function() {
     var ix = $(this)
       .parent(".paper")
       .index();
     $(".book").addClass("open");
+    console.log("Book has been opened")
+    instruct.textContent = 'CLICK ON THE NEXT PAGE TO ITERATE THROUGH';
+    opened= true;
     $(this)
       .parent(".paper")
       .addClass("open");
@@ -141,8 +189,11 @@ vara[2].ready(function() {
       vara[ix].animationEnd(function(i, o) {
         played[ix] = 1;
         if (i == "link") {
+            open = true;
+            console.log("The book is now open!");
+            console.log(open)
           var group = o.container;
-          var rect = vara[2].createNode("rect", {
+          var rect = vara[3].createNode("rect", {
             x: 0,
             y: 0,
             width: o.container.getBoundingClientRect().width,
@@ -170,4 +221,9 @@ vara[2].ready(function() {
       .parent(".paper")
       .removeClass("open");
   });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the reference to the div with the id 'myDiv'
+
 });

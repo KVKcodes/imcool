@@ -50,7 +50,7 @@ body {
 .book .side {
   width: 3em;
   height: 40em;
-  background: #b36060;
+  background: #000000;
   position: absolute;
   left: -3em;
   top: 0;
@@ -108,7 +108,7 @@ body {
   transform: translateZ(0px);
 }
 .book .first .page {
-  background: #ef9a9a;
+  background: #000000;
 }
 .book .first .page.front:after {
   position: absolute;
@@ -125,7 +125,7 @@ body {
   background: #e1e1e1;
 }
 .book .first.paper .back {
-  background: #ef9a9a;
+  background: #1e1404;
 }
 .book .intro {
   position: absolute;
@@ -175,6 +175,9 @@ body {
 .book .open.third .back {
   transform: translateZ(-2px);
 }
+.book .open.fourth .back {
+  transform: translateZ(-3px);
+}
 .book .paper.first {
   z-index: 8;
 }
@@ -187,6 +190,9 @@ body {
 .book .paper.fourth {
   z-index: 5;
 }
+.book .paper.fifth {
+  z-index: 4;
+}
 .book .paper.first .front {
   transform: translateZ(0.4px);
 }
@@ -198,6 +204,9 @@ body {
 }
 .book .paper.fourth .front {
   transform: translateZ(0.1px);
+}
+.book .paper.fifth .front {
+  transform: translateZ(0.0px);
 }
 .book .second-page #vara-container {
   width: 100%;
@@ -216,4 +225,8 @@ body {
   .book {
     left: 50%;
   }
+}
+#cover {
+  max-width: 100%;
+  max-height: 100%;
 }
